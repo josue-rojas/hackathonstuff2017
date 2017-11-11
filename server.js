@@ -25,7 +25,6 @@ var spawn = require('child_process').spawn,
 // create table if none
 pool.query("CREATE TABLE IF NOT EXISTS opportunities(id SERIAL UNIQUE PRIMARY KEY, city text NOT NULL,  major text NOT NULL, ethinicity text NOT NULL, gender text NOT NULL, age INTEGER  NOT NULL, link text NOT NULL)")
 
-
 pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, $1, $2, $3, $4, $5, $6)', ["All", "All", "African", "All", 0, "http://www.nsbe.org/"])
 
 pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, $1, $2, $3, $4, $5, $6)', ["All", "All", "All", "All", 0, "http://www.jackierobinson.org/"])
