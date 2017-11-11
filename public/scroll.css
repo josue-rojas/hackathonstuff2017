@@ -103,6 +103,8 @@
 .view.popup.active{
   z-index: 9;
   opacity: 1
+  padding: 20px;
+  text-align: center;
 }
 
 
@@ -120,3 +122,11 @@ a:visited {
 a:hover {
     color: red;
 }
+
+title
+{
+    text-size: 20px
+}
+
+
+
