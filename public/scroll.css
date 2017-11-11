@@ -52,3 +52,11 @@
   text-align: center;
   /*font-size: 44px;*/
 }
+.view .form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.progress { display: none; }
