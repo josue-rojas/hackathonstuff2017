@@ -42,7 +42,6 @@ document.addEventListener "DOMContentLoaded", ->
 
   # scroll navigations
   removeClass = ->
-    console.log('hello')
     $('.view.first').removeClass('isScroll')
   scrollT = ''
   $(window).scroll ->

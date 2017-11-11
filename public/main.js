@@ -53,7 +53,6 @@
     });
     // scroll navigations
     removeClass = function() {
-      console.log('hello');
       return $('.view.first').removeClass('isScroll');
     };
     scrollT = '';
