@@ -1,4 +1,3 @@
-
 import cv2
 cap = cv2.VideoCapture(0)
  
@@ -12,8 +11,8 @@ def main():
     y = 0
     x1 = 0
     y1 = 0
-    FaceDetector= cv2.CascadeClassifier("C:/Users/JamilG-Lenovo/Desktop/opencv-3.1.0/etc/haarcascades/haarcascade_frontalface_alt.xml")
-    EyeDetector = cv2.CascadeClassifier("C:/Users/JamilG-Lenovo/Desktop/opencv-3.1.0/etc/haarcascades/haarcascade_eye.xml")
+    FaceDetector= cv2.CascadeClassifier("D:/Hackathon/opencv-3.1.0/etc/haarcascades/haarcascade_frontalface_alt.xml")
+    EyeDetector = cv2.CascadeClassifier("D:/Hackathon/opencv-3.1.0/etc/haarcascades/haarcascade_eye.xml")
     file = "test_image.png"
     
     while(True):
@@ -23,9 +22,10 @@ def main():
         for (x,y,w,h) in faces:
             x1,y1 = x+w,y+h
             cv2.rectangle(img,(x,y),(x1,y1),(255,0,0),2)
+            cv2.line(img,(int(x+(x1-x)/2),y),(int(x+(x1-x)/2),y1),(255,0,0),2)
+            cv2.line(img,(x,int(y+(y1-y)/2)),(x1,int(y+(y1-y)/2)),(255,0,0),2)
             croppedImage = img[y:y1, x:x1]
             eyes = EyeDetector.detectMultiScale(gray, 1.3, 5)
-            eyes = 0
             for (ex,ey,ew,eh) in eyes:
                 eyex,eyey =ex,ey
                 eyex1,eyex2 =ex+ew,ey+eh
@@ -46,4 +46,3 @@ def main():
     quit()
     
 main()
-
