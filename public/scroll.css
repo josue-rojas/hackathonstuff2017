@@ -89,7 +89,7 @@
   width: 80%;
   height: 80%;
   position: absolute;
-  background-color: blue;
+  background-color: #c38e63;
   opacity: 0;
   z-index: -1;
   border-radius: 10px;
@@ -108,20 +108,15 @@
 
 /* unvisited link */
 a:link {
-    color: red;
+    color: white;
 }
 
 /* visited link */
 a:visited {
-    color: blue;
+    color: black;
 }
 
 /* mouse over link */
 a:hover {
-    color: hotpink;
-}
-
-/* selected link */
-a:active {
-    color: white;
+    color: red;
 }
