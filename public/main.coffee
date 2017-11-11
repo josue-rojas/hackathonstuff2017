@@ -73,10 +73,17 @@ document.addEventListener "DOMContentLoaded", ->
     else
       return file = input.files[0]
 
+
+
+  window.closedBox = ->
+    hasPopup = false
+    $('.view.popup').removeClass('active')
+
   window.renderLinks = (links)->
     renderHTML = ''
     for l in links
       renderHTML = renderHTML + '<p class="link">' + l.link + '</p>'
+    renderHTML = renderHTML + '<p><button class=" exit-btn btn btn-danger" onclick="closedBox()">Closed</button></p>'
     $('.view.popup').html(renderHTML)
   # submit form
   hasPopup = false
@@ -117,5 +124,8 @@ document.addEventListener "DOMContentLoaded", ->
       hasPopup = false
       $('.view.popup').removeClass('active')
 
+
+  $('.view.popup').click (event)->
+    event.stopPropagation();
   $('.view.last .submit-buttons').click (event)->
     event.stopPropagation();
