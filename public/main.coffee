@@ -81,7 +81,7 @@ document.addEventListener "DOMContentLoaded", ->
     $('.view.popup').removeClass('active')
 
   window.renderLinks = (links)->
-    renderHTML = '<p class="title"> Hey' + name + ', here are some paths to help you move <b>FourWard</b></p>';
+    renderHTML = '<p class="title"> Hey ' + name + ', here are some paths to help you move <b>FourWard</b></p>';
     for l in links
       renderHTML = renderHTML + '<a href=' + l.link + 'class="link">' + l.link + '</a>'
     renderHTML = renderHTML + '<p><button class=" exit-btn btn btn-danger" onclick="closedBox()">Closed</button></p>'

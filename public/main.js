@@ -99,7 +99,7 @@
     };
     window.renderLinks = function(links) {
       var i, l, len, renderHTML;
-      renderHTML = '<p class="title"> Hey' + name + ', here are some paths to help you move <b>FourWard</b></p>';
+      renderHTML = '<p class="title"> Hey ' + name + ', here are some paths to help you move <b>FourWard</b></p>';
       for (i = 0, len = links.length; i < len; i++) {
         l = links[i];
         renderHTML = renderHTML + '<a href=' + l.link + 'class="link">' + l.link + '</a>';
