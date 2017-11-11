@@ -70,7 +70,7 @@
   margin: 0;
 }
 .dropdown-text{
-		font-size: 1rem;
+    font-size: 1rem;
 }
 
 
@@ -85,6 +85,9 @@
 }
 
 .view.popup{
+	
+  padding: 20px;
+  text-align: center;
   font-size: 1rem;
   width: 80%;
   height: 80%;
@@ -103,8 +106,6 @@
 .view.popup.active{
   z-index: 9;
   opacity: 1
-  padding: 20px;
-  text-align: center;
 }
 
 
