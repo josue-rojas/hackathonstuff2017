@@ -1,4 +1,5 @@
 (function() {
+  name = ""
   document.addEventListener("DOMContentLoaded", function() {
     var getFile, hasPopup, positions, removeClass, scrollT, scrollTimeOut;
     positions = [];
@@ -92,7 +93,7 @@
     };
     window.renderLinks = function(links) {
       var i, l, len, renderHTML;
-      renderHTML = '';
+      renderHTML = '<p class="title"> Hey' + name +', here are some paths to help you move <b>FourWard</b>   </p>';
       for (i = 0, len = links.length; i < len; i++) {
         l = links[i];
         renderHTML = renderHTML + '<a class="link" href="' + l.link + '">' + l.link + '</a>';
