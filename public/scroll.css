@@ -37,7 +37,6 @@
   z-index: 9;
   font-size: 44px;
   transition: opacity 500ms;
-  /*margin-bottom: 100px;*/
 }
 .view.first .welcome-text:hover{
   opacity: 0

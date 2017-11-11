@@ -73,3 +73,14 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.view.first .hover').removeClass('isHover')
   })
 })
+
+
+function submitForm(){
+  name = $('#nameForm').val()
+  city = $('#cityForm').val()
+  major = $('#majorForm').val() // school major
+  ethnicity = $('#ethinicityForm').val()
+  gender = $('#genderForm').val()
+  age = $('#ageForm').val()
+  alert('Name: ' + name + ' City: ' + city + ' Major: ' + major + ' Ethinicity: ' + ethnicity + ' Gender: ' + gender + ' Age: ' + age)
+}
