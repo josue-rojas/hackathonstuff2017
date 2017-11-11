@@ -3,11 +3,13 @@ var express = require('express');
 const { Pool } = require('pg') //postgres
 var parser = require('body-parser');
 const app = express();
+const fileUpload = require('express-fileupload');
 var path = require('path');
 
 // ----------------------- setup ------------------------
 app.use(express.static( "public/" ));
 app.use(parser.json());
+app.use(fileUpload());
 app.set('view engine', 'ejs')
 var connectionString = process.env.DATABASE_URL;
 const pool = new Pool({
@@ -26,13 +28,17 @@ app.get('/', (req, res, next) => {
 app.post('/upload', function(req, res) {
   if (!req.files)
     return res.status(400).send('No files were uploaded.');
-  let sampleFile = req.files.sampleFile;
+
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  let sampleFile = req.files.image;
 
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv('/image.jpg', function(err) {
+  sampleFile.mv('public/face.jpg', function(err) {
     if (err)
       return res.status(500).send(err);
+
     res.send('File uploaded!');
+  });
 });
 
 // ----------------------- start -----------------------

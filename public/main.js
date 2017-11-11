@@ -75,7 +75,7 @@
       }
     });
     getFile = function() {
-      var file, fr, input;
+      var file, input;
       if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
         alert('The File APIs are not fully supported in this browser.');
         return;
@@ -88,22 +88,19 @@
       } else if (!input.files[0]) {
         return alert("Please select a file before clicking 'Load'");
       } else {
-        file = input.files[0];
-        fr = new FileReader();
-        fr.onload = receivedText;
-        fr.readAsText(file);
-        return fr.readAsDataURL(file);
+        return file = input.files[0];
       }
     };
     // submit form
     return submitForm = function() {
-      var age, city, ethnicity, gender, major, name;
+      var age, city, ethnicity, gender, image, major, name;
       name = $('#nameForm').val();
       city = $('#cityForm').val();
       major = Math.floor($('#majorForm').val() / (school(major)));
       ethnicity = $('#ethinicityForm').val();
       gender = $('#genderForm').val();
       age = $('#ageForm').val();
+      image = getFile();
       return alert('Name: ' + name + ' City: ' + city + ' Major: ' + major + ' Ethinicity: ' + ethnicity + ' Gender: ' + gender + ' Age: ' + age);
     };
   });
