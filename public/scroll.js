@@ -64,3 +64,12 @@
 //   lastScrollTop = currPos
 
 }).call(this);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  $('.view.first .welcome-text').hover(function(){
+    $('.view.first .hover').addClass('isHover')
+  },function(){
+    $('.view.first .hover').removeClass('isHover')
+  })
+})
