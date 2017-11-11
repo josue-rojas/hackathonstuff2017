@@ -69,10 +69,16 @@
   <div class='view'>
     <div class='form-container'>
       <label for="image">Image Upload</label>
-      <label class="btn btn-info">
-        Browse<input type="file" id='imageForm' style="display: none;">
+      <form ref='uploadForm'
+      id='uploadForm'
+      action='/upload'
+      method='post'
+      encType="multipart/form-data">
+      <label class="browse-btn btn btn-info">
+        Browse<input name='image' type="file" id='imageForm' style="display: none;">
       </label>
-      <progress class="progress" value="0" max="100"></progress>
+        <input class='upload-image btn btn-success' type='submit' value='Upload Image'/>
+    </form>
     </div>
   </div>
   <div class='view'>

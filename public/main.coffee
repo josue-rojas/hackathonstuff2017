@@ -71,11 +71,8 @@ document.addEventListener "DOMContentLoaded", ->
     else if (!input.files[0])
       alert("Please select a file before clicking 'Load'");
     else
-      file = input.files[0]
-      fr = new FileReader()
-      fr.onload = receivedText
-      fr.readAsText(file)
-      fr.readAsDataURL(file)
+      return file = input.files[0]
+
   # submit form
   submitForm = ->
     name = $('#nameForm').val()
@@ -84,4 +81,5 @@ document.addEventListener "DOMContentLoaded", ->
     ethnicity = $('#ethinicityForm').val()
     gender = $('#genderForm').val()
     age = $('#ageForm').val()
+    image = getFile()
     alert('Name: ' + name + ' City: ' + city + ' Major: ' + major + ' Ethinicity: ' + ethnicity + ' Gender: ' + gender + ' Age: ' + age)
