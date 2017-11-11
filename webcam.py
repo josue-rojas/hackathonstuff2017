@@ -25,7 +25,7 @@ def main():
             cv2.rectangle(img,(x,y),(x1,y1),(255,0,0),2)
             croppedImage = img[y:y1, x:x1]
             eyes = EyeDetector.detectMultiScale(gray, 1.3, 5)
-           int eyes =0
+            eyes = 0
             for (ex,ey,ew,eh) in eyes:
                 eyex,eyey =ex,ey
                 eyex1,eyex2 =ex+ew,ey+eh
