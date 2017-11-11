@@ -22,7 +22,8 @@
 .view.first{
   flex-direction: column;
 }
-.view.first .hover{
+.view.first .arrow-container{
+  font-size: 44px;
    width: 100%;
    height: 100%;
    position: absolute;
@@ -32,17 +33,19 @@
    align-items: center;
    justify-content: center;
 }
-
 .view.first .welcome-text{
   z-index: 9;
   font-size: 44px;
   transition: opacity 500ms;
 }
-.view.first .welcome-text:hover{
+.view.first.isScroll .arrow-container{
+  opacity: 1
+}
+.view.first.isScroll .welcome-text{
   opacity: 0
 }
-.view.first .hover.isHover{
-  opacity: 1
+.view.first .arrow-container .arrow-image{
+  margin: auto 10px;
 }
 .view .form-container{
   text-align: center;

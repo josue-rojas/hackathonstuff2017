@@ -67,11 +67,19 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  $('.view.first .welcome-text').hover(function(){
-    $('.view.first .hover').addClass('isHover')
-  },function(){
-    $('.view.first .hover').removeClass('isHover')
-  })
+  $(window).scroll(function() {
+    $('.view.first').addClass('isScroll')
+    clearTimeout($.data(this, 'scrollTimer'));
+    $.data(this, 'scrollTimer', setTimeout(function() {
+      $('.view.first').removeClass('isScroll')
+      console.log("Haven't scrolled in 250ms!");
+    }, 200));
+});
+  // $('.view.first .welcome-text').hover(function(){
+  //   $('.view.first .hover').addClass('isHover')
+  // },function(){
+  //   $('.view.first .hover').removeClass('isHover')
+  // })
 })
 
 
