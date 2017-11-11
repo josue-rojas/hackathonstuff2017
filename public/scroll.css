@@ -45,3 +45,7 @@
 .view.first .hover.isHover{
   opacity: 1
 }
+.view .form-container{
+  text-align: center;
+  font-size: 44px;
+}
