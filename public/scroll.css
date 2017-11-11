@@ -164,3 +164,11 @@ a:hover {
   /*margin-top: -5rem*/
   /*margin: 10px;*/
 }
+.map-title{
+  transition: all 500ms;
+}
+
+.hideTitle{
+  opacity: 0;
+  z-index: -9;
+}

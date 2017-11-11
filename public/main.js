@@ -146,6 +146,9 @@
         return $('.view.popup').removeClass('active');
       }
     });
+    $('.map-title').click(function(event) {
+      return $('.map-title').addClass('hideTitle');
+    });
     $('.view.popup').click(function(event) {
       return event.stopPropagation();
     });

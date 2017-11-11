@@ -126,6 +126,9 @@ document.addEventListener "DOMContentLoaded", ->
       $('.view.popup').removeClass('active')
 
 
+  $('.map-title').click (event) ->
+    $('.map-title').addClass('hideTitle')
+
   $('.view.popup').click (event)->
     event.stopPropagation();
   $('.view.last .submit-buttons').click (event)->
