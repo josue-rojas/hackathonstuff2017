@@ -133,7 +133,8 @@ a:hover {
 
 .title
 {
-    text-size: 20px;
+  color: black;
+  text-size: 20px;
 }
 
 .exit-btn{
