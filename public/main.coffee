@@ -74,12 +74,12 @@ document.addEventListener "DOMContentLoaded", ->
       return file = input.files[0]
 
   # submit form
-  submitForm = ->
+  window.submitForm = ->
     name = $('#nameForm').val()
     city = $('#cityForm').val()
-    major = $('#majorForm').val() // school major
-    ethnicity = $('#ethinicityForm').val()
-    gender = $('#genderForm').val()
+    major = $('#majorForm').val() # school major
+    ethnicity = $('#ethinicityForm').find(":selected").text();
+    gender = $('#genderForm').find(":selected").text();
     age = $('#ageForm').val()
     image = getFile()
     alert('Name: ' + name + ' City: ' + city + ' Major: ' + major + ' Ethinicity: ' + ethnicity + ' Gender: ' + gender + ' Age: ' + age)
