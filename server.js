@@ -43,23 +43,6 @@ pool.query("CREATE TABLE IF NOT EXISTS opportunities(id SERIAL UNIQUE PRIMARY KE
 
 
 
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "All", "All", 0, "http://www.jackierobinson.org/")')
-//
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "Asian", "All", 0, "http://www.apiasf.org/scholarships.html")')
-//
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "Hispanic", "All", 0, "http://www.shpe.org/")')
-//
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "Hispanic", "All", 0, "http://www.utsahsa.org/")')
-//
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "Hispanic", "All", 0, "http://www.alpfa.org/")')
-//
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "Asian", "All", 0, "https://stanfordaasa.weebly.com/")')
-//
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "Asian", "All", 0, "http://www.naacp.org/naacp-scholarships/")')
-//
-// pool.query('INSERT INTO opportunities(id, city, major, ethinicity, gender, age, link) values(DEFAULT, "All", "All", "Indian", "All", 0, "http://www.aises.org/")')
-
-
 // ----------------------- routes -----------------------
 // ALL ROUTES WITH QUERY NEEDS TO BE CHECKED IF IT WAS SUCCESSFUL
 app.get('/', (req, res, next) => {
