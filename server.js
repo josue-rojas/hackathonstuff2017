@@ -16,6 +16,12 @@ const pool = new Pool({
   connectionString: connectionString,
 })
 
+
+var spawn = require('child_process').spawn,
+   py    = spawn('python', ['compute_input.py']),
+   data = [1,2,3,4,5,6,7,8,9],
+   dataString = '';
+
 // create table if none
 // pool.query("CREATE TABLE IF NOT EXISTS events(id SERIAL UNIQUE PRIMARY KEY, year INTEGER  NOT NULL, monthNum INTEGER NOT NULL, month VARCHAR(255) NOT NULL, day INTEGER NOT NULL, hourStart INTEGER  NOT NULL, minStart INTEGER NOT NULL, hourEnd INTEGER NOT NULL, minEnd INTEGER NOT NULL, priority INTEGER NOT NULL, description text NOT NULL)")
 
@@ -40,6 +46,20 @@ app.post('/upload', function(req, res) {
     res.send('File uploaded!');
   });
 });
+
+
+py.stdout.on('data', function(data){
+  dataString += data.toString();
+});
+
+/*Once the stream is done (on 'end') we want to simply log the received data to the console.*/
+py.stdout.on('end', function(){
+  console.log('Sum of numbers=',dataString);
+});
+
+py.stdin.write(JSON.stringify(data));
+
+py.stdin.end();
 
 // ----------------------- start -----------------------
 app.listen(process.env.PORT);
