@@ -149,8 +149,19 @@
     $('.view.popup').click(function(event) {
       return event.stopPropagation();
     });
-    return $('.view.last .submit-buttons').click(function(event) {
+    $('.view.last .submit-buttons').click(function(event) {
       return event.stopPropagation();
+    });
+    return $('.dropdown-text').change(function() {
+      var change, currPos, targetPos;
+      console.log('hello');
+      currPos = $(window).scrollTop();
+      clearTimeout(scrollTimeOut);
+      targetPos = positions.find(function(element) {
+        return element > currPos;
+      });
+      targetPos = targetPos ? targetPos : positions[positions.length - 1];
+      return scrollToPos(change = .50, currPos, targetPos, true);
     });
   });
 

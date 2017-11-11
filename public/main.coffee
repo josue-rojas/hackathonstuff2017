@@ -130,3 +130,11 @@ document.addEventListener "DOMContentLoaded", ->
     event.stopPropagation();
   $('.view.last .submit-buttons').click (event)->
     event.stopPropagation();
+  $('.dropdown-text').change ->
+    console.log('hello')
+    currPos = $(window).scrollTop()
+    clearTimeout(scrollTimeOut)
+    targetPos = positions.find (element)->
+      return element > currPos
+    targetPos = if targetPos then targetPos else positions[positions.length-1]
+    scrollToPos(change=.50, currPos, targetPos, true)
