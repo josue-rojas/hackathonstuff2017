@@ -76,9 +76,12 @@
 
 .progress { display: none; }
 
-.wording{
+.message{
   background-color: gray;
   opacity: 0.5;
+}
+
+.wording{
   font-size: 22px;
 }
 
