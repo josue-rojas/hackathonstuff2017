@@ -74,6 +74,7 @@ document.addEventListener "DOMContentLoaded", ->
       return file = input.files[0]
 
   # submit form
+  hasPopup = false
   window.submitForm = ->
     name = $('#nameForm').val()
     city = $('#cityForm').val()
@@ -82,4 +83,15 @@ document.addEventListener "DOMContentLoaded", ->
     gender = $('#genderForm').find(":selected").text();
     age = $('#ageForm').val()
     image = getFile()
-    alert('Name: ' + name + ' City: ' + city + ' Major: ' + major + ' Ethinicity: ' + ethnicity + ' Gender: ' + gender + ' Age: ' + age)
+    # alert('Name: ' + name + ' City: ' + city + ' Major: ' + major + ' Ethinicity: ' + ethnicity + ' Gender: ' + gender + ' Age: ' + age)
+    $('.view.popup').addClass('active')
+    hasPopup = true
+
+  $('.view.last').click ->
+    if hasPopup
+      console.log('heelo')
+      hasPopup = false
+      $('.view.popup').removeClass('active')
+
+  $('.view.last .submit-buttons').click (event)->
+    event.stopPropagation();

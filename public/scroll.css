@@ -83,3 +83,20 @@
 .bigbutton{
   font-size: 44px;
 }
+
+.view.popup{
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  background-color: blue;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 10px;
+  transition: all 500ms;
+  /*opacity: 1;
+  z-index: 9;*/
+}
+.view.popup.active{
+  z-index: 9;
+  opacity: 1
+}
