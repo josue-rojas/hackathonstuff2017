@@ -73,19 +73,43 @@ document.addEventListener "DOMContentLoaded", ->
     else
       return file = input.files[0]
 
+  window.renderLinks = (links)->
+    renderHTML = ''
+    for l in links
+      renderHTML = renderHTML + '<p class="link">' + l.link + '</p>'
+    $('.view.popup').html(renderHTML)
   # submit form
   hasPopup = false
   window.submitForm = ->
     name = $('#nameForm').val()
-    city = $('#cityForm').val()
+    # city = $('#cityForm').val()
     major = $('#majorForm').val() # school major
     ethnicity = $('#ethinicityForm').find(":selected").text();
     gender = $('#genderForm').find(":selected").text();
-    age = $('#ageForm').val()
+    # age = $('#ageForm').val()
     image = getFile()
+
+    ethnicity = if ethnicity == 'African American/Black' then 'African' else ethnicity #hardcoded should be removed
+    console.log(ethnicity)
+    age = 0 # hardcoded stuff
+    # name goes in box
+    thisUrl = 'opportunies/q?ethinicity=' + ethnicity
+    console.log(thisUrl)
+    $.ajax({
+    type:'GET',
+    url:thisUrl,
+    datatype:'json',
+    contentType: 'application/json',
+    success: (data)->
+      renderLinks(JSON.parse(data))
+      $('.view.popup').addClass('active')
+      hasPopup = true
+      # window.location = window.location; # refresh
+    })
+
     # alert('Name: ' + name + ' City: ' + city + ' Major: ' + major + ' Ethinicity: ' + ethnicity + ' Gender: ' + gender + ' Age: ' + age)
-    $('.view.popup').addClass('active')
-    hasPopup = true
+    # $('.view.popup').addClass('active')
+    # hasPopup = true
 
   $('.view.last').click ->
     if hasPopup

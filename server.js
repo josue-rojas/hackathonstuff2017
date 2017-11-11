@@ -15,7 +15,7 @@ var connectionString = process.env.DATABASE_URL;
 const pool = new Pool({
   connectionString: connectionString,
 })
-
+//
 
 var spawn = require('child_process').spawn,
    py    = spawn('python', ['compute_input.py']),
@@ -82,6 +82,26 @@ app.post('/upload', function(req, res) {
     res.send('File uploaded!');
   });
 });
+
+app.get('/opportunies/q', (req,res) =>{
+  // name =  !req.query.name ? '' : "name='"+req.query.name+"'"
+  city =  !req.query.city ? '' : "city='"+req.query.city+"'"
+  major =  !req.query.major ? '' : "major='"+req.query.major+"'"
+  ethinicity =  !req.query.ethnicity ? '' : "ethinicity='"+req.query.ethnicity+"'"
+  gender =  !req.query.gender ? '' : "month='"+req.query.gender+"'"
+  age =  !req.query.age ? '' : "age='"+req.query.age+"'"
+  // image =  !req.query.image ? '' : "image='"+req.query.image+"'"
+  newQuery = [city, major, ethinicity, gender, age].filter(function(w){return w.length > 0}).join(' and ')
+  console.log(newQuery)
+
+  newQuery =  newQuery.length < 1 ? 'SELECT link FROM opportunities' : 'SELECT link FROM opportunities WHERE ' + newQuery
+  pool.query(newQuery)
+  .then(results =>{
+    console.log(results.rows)
+    res.end(JSON.stringify(results.rows))
+  })
+  .catch(e => console.error(e.stack))
+})
 
 
 py.stdout.on('data', function(data){
