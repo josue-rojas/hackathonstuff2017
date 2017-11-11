@@ -82,7 +82,7 @@ document.addEventListener "DOMContentLoaded", ->
   window.renderLinks = (links)->
     renderHTML = ''
     for l in links
-      renderHTML = renderHTML + '<p class="link">' + l.link + '</p>'
+      renderHTML = renderHTML + '<a href=' + l.link + 'class="link">' + l.link + '</a>'
     renderHTML = renderHTML + '<p><button class=" exit-btn btn btn-danger" onclick="closedBox()">Closed</button></p>'
     $('.view.popup').html(renderHTML)
   # submit form

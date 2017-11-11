@@ -101,7 +101,7 @@
       renderHTML = '';
       for (i = 0, len = links.length; i < len; i++) {
         l = links[i];
-        renderHTML = renderHTML + '<p class="link">' + l.link + '</p>';
+        renderHTML = renderHTML + '<a href=' + l.link + 'class="link">' + l.link + '</a>';
       }
       renderHTML = renderHTML + '<p><button class=" exit-btn btn btn-danger" onclick="closedBox()">Closed</button></p>';
       return $('.view.popup').html(renderHTML);
