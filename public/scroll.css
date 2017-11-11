@@ -104,3 +104,24 @@
   z-index: 9;
   opacity: 1
 }
+
+
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: blue;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
