@@ -140,3 +140,27 @@ a:hover {
 .exit-btn{
   margin: 10px;
 }
+.map{
+  width: 80%;
+  height: 80%;
+  z-index: 99;
+}
+
+.map-title{
+  margin-top: auto;
+  position: absolute;
+  display: flex;
+  /*align-items: center;*/
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.location-wrapper{
+  margin-top: 20%;
+  /*margin-bottom: -10px;*/
+  background: gray;
+  height: 80px;
+  opacity: .8
+  /*margin-top: -5rem*/
+  /*margin: 10px;*/
+}
