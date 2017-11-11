@@ -104,6 +104,22 @@ app.get('/opportunies/q', (req,res) =>{
 })
 
 
+// post new stuff
+// NEED TESTINF
+app.post('/newEntry', (req, res) =>{
+  city =  !req.query.city ? 'All' : req.query.city
+  major =  !req.query.major ? 'All' : req.query.major
+  ethinicity =  !req.query.ethnicity ? 'All' : req.query.ethnicity
+  gender =  !req.query.gender ? 'All' : req.query.gender
+  age =  !req.query.age ? '0' : req.query.age
+  link = !req.query.age ? '#' : req.query.link
+  pool.query('INSERT INTO opportunities')
+
+  pool.query('INSERT INTO events(id, year, monthNum, month, day, hourStart, minStart, hourEnd, minEnd, priority, description) values(DEFAULT, $1, $2, $3, $4, $5, $6)',[city, major, ethinicity, gender, age, link])
+  res.end('{success : "Updated Successfully", "status" : 200}');
+})
+
+
 py.stdout.on('data', function(data){
   dataString += data.toString();
 });
